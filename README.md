@@ -1,3 +1,15 @@
+> # HEchternacht/acestep.cpp: fork notes
+> Personal fork of [ServeurpersoCom/acestep.cpp](https://github.com/ServeurpersoCom/acestep.cpp) (ACE-Step music generation in C++/ggml). Branch **`local-master`** holds my local state; upstream README follows unchanged.
+>
+> ## Changes from upstream
+> - `server.cmd` runs `ace-server.exe` on port 8085 with the flags I use on a 6 GB laptop GPU: `--max-batch 1 --no-batch-cfg` (split CFG into two forwards, less VRAM), `--vae-chunk 256 --vae-overlap 32` (tiled VAE decode), `--max-seq 4096` (smaller KV cache).
+> - Used as the music backend of [Radio](https://github.com/HEchternacht/Radio), which starts this server automatically.
+>
+> ## Use
+> Build as described below, put the GGUF models in `models\` and run `server.cmd`; the API listens on `http://localhost:8085`.
+
+---
+
 # acestep.cpp
 
 Local AI music generation server with browser UI, powered by GGML.
