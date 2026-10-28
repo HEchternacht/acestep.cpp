@@ -11,6 +11,10 @@ ace-server.exe ^
     --port 8085 ^
     --models .\models ^
     --adapters .\adapters ^
-    --max-batch 1
+    --max-batch 1 ^
+    --no-batch-cfg ^
+    --vae-chunk 256 ^
+    --vae-overlap 32 ^
+    --max-seq 4096
 
 pause
